@@ -13,11 +13,15 @@ function goTo(idx, dir = 1) {
 	if (dir === 1) scenes[current].classList.add("exit-left");
 	setTimeout(() => scenes[idx >= 0 ? current : idx].classList.remove("exit-left"), 900);
 
+	// if (current === 0 && idx !== 0) stopGuestAudio();
 	current = idx;
 
 	setTimeout(() => {
 		scenes[current].classList.add("active");
-		if (current === 0) animateLetter();
+		if (current === 0) {
+			animateLetter();
+			playGuestAudio();
+		}
 		updateDots();
 		updateNavBtns();
 		resetAutoplay();
@@ -47,15 +51,16 @@ function updateNavBtns() {
 function resetAutoplay() {
 	clearAutoplay();
 	if (current === scenes.length - 1) return;
+	const duration = current === 0 ? LETTER_SCENE_DURATION : SCENE_DURATION;
 	autoFill.style.transition = "none";
 	autoFill.style.width = "0%";
 	requestAnimationFrame(() => {
-		autoFill.style.transition = `width ${SCENE_DURATION}ms linear`;
+		autoFill.style.transition = `width ${duration}ms linear`;
 		autoFill.style.width = "100%";
 	});
 	autoTimer = setTimeout(() => {
 		if (current < scenes.length - 1) goTo(current + 1);
-	}, SCENE_DURATION);
+	}, duration);
 }
 
 function clearAutoplay() {
