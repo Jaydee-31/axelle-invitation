@@ -6,6 +6,7 @@ enterBtn.addEventListener('click', () => {
   setTimeout(() => {
     intro.style.display = 'none';
     scenes[0].classList.add('active');
+    animateLetter();
     updateDots();
     updateNavBtns();
     resetAutoplay();

@@ -381,36 +381,24 @@ body {
 
 .intro-eyebrow {
 	font-family: "Quicksand", sans-serif;
-	font-weight: 500;
 	font-size: 13px;
 	letter-spacing: 3px;
 	text-transform: uppercase;
 	color: var(--deep-rose);
-	margin-bottom: 12px;
+	margin-bottom: 40px;
 	opacity: 0;
 	animation: fadeUp 1s 0.3s forwards;
 }
+
 .intro-name {
 	font-family: "Great Vibes", cursive;
-	font-size: clamp(58px, 15vw, 76px);
-	color: var(--text-dark);
-	line-height: 1.4;
-	opacity: 0;
-	animation: fadeUp 1s 0.7s forwards;
+	font-size: clamp(44px, 12vw, 60px);
 	background: linear-gradient(135deg, #c97b96, #e8a0b4, #c9a96e);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-}
-.intro-sub {
-	font-family: "Playfair Display", serif;
-	font-size: 13px;
-	font-style: italic;
-	color: var(--text-mid);
-	line-height: 1.7;
-	margin: 14px 0 32px;
-	opacity: 0;
-	animation: fadeUp 1s 1s forwards;
+	margin-top: 20px;
+	animation: floatGen 6s ease-in-out infinite;
 }
 
 @keyframes fadeUp {
@@ -476,26 +464,7 @@ body {
 /* ═══════════════════════════════════════════
    SCENE 1 — OPENING
 ═══════════════════════════════════════════ */
-.s1-christening {
-	font-family: "Great Vibes", cursive;
-	font-size: clamp(44px, 12vw, 60px);
-	background: linear-gradient(135deg, #c97b96, #e8a0b4, #c9a96e);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	line-height: 1.4;
-	margin-bottom: 4px;
-	animation: floatGen 6s ease-in-out infinite;
-}
-.s1-subtitle {
-	font-family: "Playfair Display", serif;
-	font-style: italic;
-	font-size: 13px;
-	color: var(--text-mid);
-	line-height: 1.7;
-	margin: 8px 0 20px;
-	max-width: 280px;
-}
+
 .portrait-frame {
 	width: 160px;
 	height: 190px;
@@ -513,6 +482,11 @@ body {
 	position: relative;
 	overflow: hidden;
 	animation: floatPhoto 5s ease-in-out infinite;
+}
+.portrait-frame img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 }
 .portrait-baby {
 	font-size: 80px;
@@ -544,17 +518,6 @@ body {
 	50% {
 		transform: translateY(-6px);
 	}
-}
-
-.s1-name {
-	font-family: "Great Vibes", cursive;
-	font-size: clamp(38px, 10vw, 52px);
-	color: var(--text-dark);
-	background: linear-gradient(135deg, #5a3a47, #c97b96);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	padding: 0.1em 0.1em 0.25em;
 }
 
 /* ═══════════════════════════════════════════

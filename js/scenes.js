@@ -17,7 +17,7 @@ function goTo(idx, dir = 1) {
 
 	setTimeout(() => {
 		scenes[current].classList.add("active");
-		if (current === 1) animateLetter();
+		if (current === 0) animateLetter();
 		updateDots();
 		updateNavBtns();
 		resetAutoplay();
