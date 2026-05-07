@@ -55,6 +55,40 @@
 		<div id="autoplay-bar"><div id="autoplay-fill"></div></div>
 
 		<!-- ═══════════════════════════════════════════
+     ERROR SCREEN
+═══════════════════════════════════════════ -->
+		<div id="error-screen">
+			<div id="error-card" class="glass">
+				<svg class="bow-intro" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M40 25 C30 10, 2 8, 5 22 C8 36, 32 28, 40 25Z" fill="url(#eg1)" opacity="0.85" />
+					<path d="M40 25 C50 10, 78 8, 75 22 C72 36, 48 28, 40 25Z" fill="url(#eg2)" opacity="0.85" />
+					<ellipse cx="40" cy="25" rx="5" ry="5" fill="url(#eg3)" />
+					<path d="M40 25 Q38 32 36 40" stroke="#e8a0b4" stroke-width="1.5" stroke-linecap="round" />
+					<path d="M40 25 Q42 32 44 40" stroke="#e8a0b4" stroke-width="1.5" stroke-linecap="round" />
+					<defs>
+						<linearGradient id="eg1" x1="0" y1="0" x2="40" y2="50">
+							<stop offset="0%" stop-color="#f9c8d8" />
+							<stop offset="100%" stop-color="#e8a0b4" />
+						</linearGradient>
+						<linearGradient id="eg2" x1="80" y1="0" x2="40" y2="50">
+							<stop offset="0%" stop-color="#f9c8d8" />
+							<stop offset="100%" stop-color="#e8a0b4" />
+						</linearGradient>
+						<radialGradient id="eg3">
+							<stop offset="0%" stop-color="#c9a96e" />
+							<stop offset="100%" stop-color="#e8a0b4" />
+						</radialGradient>
+					</defs>
+				</svg>
+				<div class="error-icon">🌸</div>
+				<h2 class="error-title">Oops!</h2>
+				<div class="divider"></div>
+				<p class="error-msg">This invitation link is missing a guest name.<br />Please use the personalized link you received.</p>
+				<p class="error-hint">✦ If you believe this is an error, kindly contact the host ✦</p>
+			</div>
+		</div>
+
+		<!-- ═══════════════════════════════════════════
      INTRO
 ═══════════════════════════════════════════ -->
 		<div id="intro">
@@ -82,7 +116,7 @@
 					</defs>
 				</svg>
 
-				<p class="intro-eyebrow">You are invited to celebrate the <strong>Christening</strong> of</p>
+				<p class="intro-eyebrow">I'd love for you to come to my <strong>Christening!</strong></p>
 				<div class="portrait-frame">
 					<img src="assets/img/intro-img.jpg" alt="Axelle Bree" />
 				</div>
@@ -110,7 +144,7 @@
 
 				<!-- SCENE 2 — MEMORIES -->
 				<div class="scene" id="scene-2">
-					<h2 class="memories-title">Our Baby Girl</h2>
+					<h2 class="memories-title">Hi, I'm Axelle! 🌸</h2>
 					<div class="polaroids">
 						<div class="polaroid">
 							<div class="pol-img">🌸</div>
@@ -126,7 +160,7 @@
 						</div>
 					</div>
 					<div class="divider" style="margin-top: 22px"></div>
-					<p class="serif" style="font-size: 13px; font-style: italic; color: var(--text-mid); margin-top: 10px">"Every moment with you is a treasure"</p>
+					<p class="serif" style="font-size: 13px; font-style: italic; color: var(--text-mid); margin-top: 10px">"I can't wait to grow up with you by my side"</p>
 				</div>
 
 				<!-- SCENE 3 — EVENT DETAILS -->
@@ -163,10 +197,10 @@
 					<h2 class="ending-big">With Love & Joy</h2>
 					<div class="divider"></div>
 					<p class="ending-msg">
-						We are beyond grateful that you are<br />
-						part of this blessed milestone in<br />
-						little <em>Axelle's</em> life.<br />
-						Your love makes all the difference. 💕
+						I may be tiny, but my heart is already<br />
+						so full of love for you,<br />
+						my dear <span id="godparent-label">Ninong &amp; Ninang</span>.<br />
+						Thank you for choosing to walk beside me in faith. 💕
 					</p>
 					<button class="rsvp-btn" id="rsvp-open-btn">💌 RSVP Now</button>
 					<p class="sans" style="font-size: 10px; color: var(--text-light); margin-top: 16px; letter-spacing: 1px">✦ Kindly RSVP by June 30, 2025 ✦</p>
@@ -189,8 +223,8 @@
 			<div id="modal" class="glass" style="position: relative">
 				<button id="modal-close">✕</button>
 				<div style="font-size: 32px; margin-bottom: 8px">💌</div>
-				<h3 class="modal-title">Will you attend?</h3>
-				<p class="modal-sub">We'd love to celebrate<br />this blessed day with you!</p>
+				<h3 class="modal-title">Will you be there?</h3>
+				<p class="modal-sub">I'd love to have you by my side<br />on my special day!</p>
 				<div class="modal-btns">
 					<button class="modal-yes" id="rsvp-yes">✨ Yes, I'll be there!</button>
 					<button class="modal-no" id="rsvp-no">Sorry, I can't make it</button>
@@ -206,6 +240,7 @@
 			<button class="ty-close" onclick="document.getElementById('ty-msg').classList.remove('show')">Close</button>
 		</div>
 
+		<script src="js/error-handler.js"></script>
 		<script type="module" src="js/firebase.js"></script>
 		<script src="js/config.js"></script>
 		<script src="js/particles.js"></script>

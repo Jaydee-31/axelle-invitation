@@ -15,16 +15,16 @@ modalOverlay.addEventListener('click', (e) => {
 
 rsvpYes.addEventListener('click', () => {
   modalOverlay.classList.remove('open');
-  document.getElementById('ty-text').textContent = 'See You There! 🥂';
-  document.getElementById('ty-sub').textContent = `We're so excited to celebrate with you, ${guestName}!`;
+  document.getElementById('ty-text').textContent = 'Yay! See You There! 🥂';
+  document.getElementById('ty-sub').textContent = `I'm so happy you'll be there, ${guestName || "dear guest"}! I'll save a big hug just for you! 🌸`;
   tyMsg.classList.add('show');
   saveRsvp(guestName, 'yes').catch(console.error);
 });
 
 rsvpNo.addEventListener('click', () => {
   modalOverlay.classList.remove('open');
-  document.getElementById('ty-text').textContent = "We'll Miss You 💕";
-  document.getElementById('ty-sub').textContent = `Thank you for letting us know, ${guestName}. We'll be thinking of you!`;
+  document.getElementById('ty-text').textContent = "I'll Miss You! 💕";
+  document.getElementById('ty-sub').textContent = `Thank you for letting me know, ${guestName || "dear guest"}. I'll be sending you lots of love! 🌸`;
   tyMsg.classList.add('show');
   saveRsvp(guestName, 'no').catch(console.error);
 });

@@ -1,6 +1,6 @@
 function animateLetter() {
 	const dear = document.getElementById("letter-dear");
-	dear.textContent = `Dear ${guestName},`;
+	dear.textContent = `Dear ${guestName || "Friend"},`;
 
 	const body = document.getElementById("letter-body");
 	body.innerHTML = "";
