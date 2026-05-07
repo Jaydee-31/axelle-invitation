@@ -1,0 +1,3 @@
+createPetals();
+createSparkles();
+updateNavBtns();

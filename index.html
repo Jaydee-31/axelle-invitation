@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Axelle's Christening</title>
+		<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<!-- Background -->
+		<div id="bg-canvas">
+			<div class="orb orb1"></div>
+			<div class="orb orb2"></div>
+			<div class="orb orb3"></div>
+		</div>
+
+		<!-- Clouds -->
+		<div class="cloud-layer">
+			<div class="cloud c1"></div>
+			<div class="cloud c2"></div>
+			<div class="cloud c3"></div>
+			<div class="cloud c4"></div>
+		</div>
+
+		<!-- Petals -->
+		<div class="petal-layer" id="petal-layer"></div>
+
+		<!-- Sparkles -->
+		<div class="sparkle-layer" id="sparkle-layer"></div>
+
+		<!-- Corner bows -->
+		<div class="corner-bow cb-tl">🎀</div>
+		<div class="corner-bow cb-tr">🎀</div>
+
+		<!-- Teddy -->
+		<div class="teddy">🧸</div>
+
+		<!-- Floral bottom bar -->
+		<div class="floral-bar">🌸 🌷 🌼 🌸 🌷 🌼 🌸</div>
+
+		<!-- Audio button -->
+		<button id="audio-btn" title="Toggle music">🔇</button>
+
+		<!-- Progress dots -->
+		<div id="dots">
+			<div class="dot active"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+		</div>
+
+		<!-- Autoplay bar -->
+		<div id="autoplay-bar"><div id="autoplay-fill"></div></div>
+
+		<!-- ═══════════════════════════════════════════
+     INTRO
+═══════════════════════════════════════════ -->
+		<div id="intro">
+			<div id="intro-card" class="glass">
+				<!-- SVG Bow -->
+				<svg class="bow-intro" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M40 25 C30 10, 2 8, 5 22 C8 36, 32 28, 40 25Z" fill="url(#bg1)" opacity="0.85" />
+					<path d="M40 25 C50 10, 78 8, 75 22 C72 36, 48 28, 40 25Z" fill="url(#bg2)" opacity="0.85" />
+					<ellipse cx="40" cy="25" rx="5" ry="5" fill="url(#bg3)" />
+					<path d="M40 25 Q38 32 36 40" stroke="#e8a0b4" stroke-width="1.5" stroke-linecap="round" />
+					<path d="M40 25 Q42 32 44 40" stroke="#e8a0b4" stroke-width="1.5" stroke-linecap="round" />
+					<defs>
+						<linearGradient id="bg1" x1="0" y1="0" x2="40" y2="50">
+							<stop offset="0%" stop-color="#f9c8d8" />
+							<stop offset="100%" stop-color="#e8a0b4" />
+						</linearGradient>
+						<linearGradient id="bg2" x1="80" y1="0" x2="40" y2="50">
+							<stop offset="0%" stop-color="#f9c8d8" />
+							<stop offset="100%" stop-color="#e8a0b4" />
+						</linearGradient>
+						<radialGradient id="bg3">
+							<stop offset="0%" stop-color="#c9a96e" />
+							<stop offset="100%" stop-color="#e8a0b4" />
+						</radialGradient>
+					</defs>
+				</svg>
+
+				<p class="intro-eyebrow">✦ You are invited to ✦</p>
+				<h1 class="intro-name">Axelle</h1>
+				<div class="divider" style="opacity: 0; animation: fadeUp 1s 0.9s forwards"></div>
+				<p class="intro-sub">A soft and graceful<br />christening celebration invitation</p>
+				<button id="enter-btn">🌸 Tap to Enter</button>
+			</div>
+		</div>
+
+		<!-- ═══════════════════════════════════════════
+     MAIN FRAME
+═══════════════════════════════════════════ -->
+		<div id="frame">
+			<div id="stage">
+				<!-- SCENE 1 — OPENING -->
+				<div class="scene" id="scene-0">
+					<h1 class="s1-christening">Christening</h1>
+					<p class="s1-subtitle">Please join us as we celebrate<br />the christening of our daughter</p>
+					<div class="portrait-frame">
+						<span class="portrait-baby">👶🏻</span>
+					</div>
+					<h2 class="s1-name">Axelle</h2>
+					<div class="divider" style="margin-top: 10px"></div>
+					<p class="sans" style="font-size: 11px; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; margin-top: 8px">✦ A Blessed Celebration ✦</p>
+				</div>
+
+				<!-- SCENE 2 — INVITATION LETTER -->
+				<div class="scene" id="scene-1">
+					<div class="letter-card glass">
+						<div class="letter-corner lc-tl">🌸</div>
+						<div class="letter-corner lc-br">🌸</div>
+						<p class="letter-dear" id="letter-dear">Dear Friend,</p>
+						<div class="divider" style="margin-bottom: 16px"></div>
+						<p class="letter-body" id="letter-body"></p>
+					</div>
+				</div>
+
+				<!-- SCENE 3 — MEMORIES -->
+				<div class="scene" id="scene-2">
+					<h2 class="memories-title">Our Baby Girl</h2>
+					<div class="polaroids">
+						<div class="polaroid">
+							<div class="pol-img">🌸</div>
+							<p class="pol-label">First Smile</p>
+						</div>
+						<div class="polaroid">
+							<div class="pol-img">👶🏻</div>
+							<p class="pol-label">Our Angel</p>
+						</div>
+						<div class="polaroid">
+							<div class="pol-img">🎀</div>
+							<p class="pol-label">Sweet Axelle</p>
+						</div>
+					</div>
+					<div class="divider" style="margin-top: 22px"></div>
+					<p class="serif" style="font-size: 13px; font-style: italic; color: var(--text-mid); margin-top: 10px">"Every moment with you is a treasure"</p>
+				</div>
+
+				<!-- SCENE 4 — EVENT DETAILS -->
+				<div class="scene" id="scene-3">
+					<h2 class="details-title">Save the Date</h2>
+					<div class="detail-grid">
+						<div class="detail-card glass-sm">
+							<span class="detail-icon">📅</span>
+							<span class="detail-label">Date</span>
+							<span class="detail-value">July 12, 2025<br />Saturday</span>
+						</div>
+						<div class="detail-card glass-sm">
+							<span class="detail-icon">🕙</span>
+							<span class="detail-label">Time</span>
+							<span class="detail-value">10:00 AM<br />Onwards</span>
+						</div>
+						<div class="detail-card glass-sm wide">
+							<span class="detail-icon">⛪</span>
+							<span class="detail-label">Church</span>
+							<span class="detail-value">Saint Mary's Parish Church<br /><span style="font-size: 11px; color: var(--text-light)">123 Blessings Lane, Manila</span></span>
+						</div>
+						<div class="detail-card glass-sm wide">
+							<span class="detail-icon">🌷</span>
+							<span class="detail-label">Reception</span>
+							<span class="detail-value">The Garden of Grace Events Place<br /><span style="font-size: 11px; color: var(--text-light)">456 Rose Avenue, Manila</span></span>
+						</div>
+					</div>
+				</div>
+
+				<!-- SCENE 5 — ENDING -->
+				<div class="scene" id="scene-4">
+					<div style="font-size: 36px; margin-bottom: 8px; animation: floatGen 4s ease-in-out infinite">🕊️</div>
+					<h2 class="ending-big">With Love & Joy</h2>
+					<div class="divider"></div>
+					<p class="ending-msg">
+						We are beyond grateful that you are<br />
+						part of this blessed milestone in<br />
+						little <em>Axelle's</em> life.<br />
+						Your love makes all the difference. 💕
+					</p>
+					<button class="rsvp-btn" id="rsvp-open-btn">💌 RSVP Now</button>
+					<p class="sans" style="font-size: 10px; color: var(--text-light); margin-top: 16px; letter-spacing: 1px">✦ Kindly RSVP by June 30, 2025 ✦</p>
+				</div>
+			</div>
+			<!-- /stage -->
+		</div>
+		<!-- /frame -->
+
+		<!-- Nav buttons -->
+		<div id="nav-bar">
+			<button class="nav-btn" id="prev-btn">← Back</button>
+			<button class="nav-btn primary" id="next-btn">Next →</button>
+		</div>
+
+		<!-- ═══════════════════════════════════════════
+     RSVP MODAL
+═══════════════════════════════════════════ -->
+		<div id="modal-overlay">
+			<div id="modal" class="glass" style="position: relative">
+				<button id="modal-close">✕</button>
+				<div style="font-size: 32px; margin-bottom: 8px">💌</div>
+				<h3 class="modal-title">Will you attend?</h3>
+				<p class="modal-sub">We'd love to celebrate<br />this blessed day with you!</p>
+				<div class="modal-btns">
+					<button class="modal-yes" id="rsvp-yes">✨ Yes, I'll be there!</button>
+					<button class="modal-no" id="rsvp-no">Sorry, I can't make it</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Thank-you message -->
+		<div id="ty-msg">
+			<div class="ty-emoji">🌸</div>
+			<div class="ty-text" id="ty-text">Thank You!</div>
+			<div class="ty-sub" id="ty-sub">We can't wait to see you there.</div>
+			<button class="ty-close" onclick="document.getElementById('ty-msg').classList.remove('show')">Close</button>
+		</div>
+
+		<script type="module" src="js/firebase.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/particles.js"></script>
+		<script src="js/audio.js"></script>
+		<script src="js/letter.js"></script>
+		<script src="js/modal.js"></script>
+		<script src="js/scenes.js"></script>
+		<script src="js/intro.js"></script>
+		<script src="js/swipe.js"></script>
+		<script src="js/init.js"></script>
+	</body>
+</html>

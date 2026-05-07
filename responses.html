@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axelle's Christening — Guest Responses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+      :root {
+        --blush: #f9d6e0;
+        --rose: #e8a0b4;
+        --deep-rose: #c97b96;
+        --cream: #fdf6f0;
+        --gold: #c9a96e;
+        --text-dark: #5a3a47;
+        --text-mid: #8a5a6a;
+        --text-light: #b07a8a;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(160deg, #fce8f0 0%, #fdf3f8 30%, #f8e8f5 60%, #fde8e0 100%);
+        font-family: 'Quicksand', sans-serif;
+        color: var(--text-dark);
+        padding: 32px 16px 48px;
+      }
+
+      .page {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+
+      .heading {
+        font-family: 'Great Vibes', cursive;
+        font-size: clamp(38px, 10vw, 52px);
+        background: linear-gradient(135deg, #c97b96, #e8a0b4, #c9a96e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.4;
+        padding-bottom: 0.15em;
+      }
+
+      .subheading {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 13px;
+        color: var(--text-light);
+        margin-top: 4px;
+      }
+
+      .divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--rose), transparent);
+        margin: 20px 0;
+      }
+
+      /* Summary cards */
+      .summary {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .summary-card {
+        flex: 1;
+        background: rgba(255,255,255,0.65);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.8);
+        border-radius: 18px;
+        padding: 16px 12px;
+        text-align: center;
+      }
+
+      .summary-count {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--deep-rose);
+        line-height: 1;
+      }
+
+      .summary-label {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-light);
+        margin-top: 6px;
+      }
+
+      /* Response list */
+      .list-card {
+        background: rgba(255,255,255,0.65);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.8);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .list-header {
+        padding: 14px 18px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--text-light);
+        border-bottom: 1px solid rgba(201,123,150,0.12);
+      }
+
+      .response-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 18px;
+        border-bottom: 1px solid rgba(201,123,150,0.08);
+        gap: 12px;
+      }
+
+      .response-item:last-child { border-bottom: none; }
+
+      .guest-name {
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--text-dark);
+      }
+
+      .response-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+
+      .response-badge {
+        font-size: 12px;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 20px;
+      }
+
+      .badge-yes {
+        background: rgba(100,200,120,0.15);
+        color: #3a7a4a;
+      }
+
+      .badge-no {
+        background: rgba(200,100,100,0.1);
+        color: #8a3a3a;
+      }
+
+      .response-time {
+        font-size: 11px;
+        color: var(--text-light);
+      }
+
+      .empty-state {
+        padding: 40px 20px;
+        text-align: center;
+        color: var(--text-light);
+        font-style: italic;
+        font-size: 14px;
+      }
+
+      #loading {
+        text-align: center;
+        padding: 40px;
+        color: var(--text-light);
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="heading">Guest Responses</div>
+        <div class="subheading">Axelle's Christening · July 12</div>
+      </header>
+
+      <div class="divider"></div>
+
+      <div class="summary">
+        <div class="summary-card">
+          <div class="summary-count" id="count-yes">—</div>
+          <div class="summary-label">Attending</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-count" id="count-no">—</div>
+          <div class="summary-label">Can't make it</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-count" id="count-total">—</div>
+          <div class="summary-label">Total</div>
+        </div>
+      </div>
+
+      <div class="list-card">
+        <div class="list-header">All Responses</div>
+        <div id="response-list">
+          <div id="loading">Loading responses…</div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+      import { getFirestore, collection, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCPgtQoMtq51J88lgo3UHqfdRHG5Br3Q_c",
+        authDomain: "axelle-invitation.firebaseapp.com",
+        projectId: "axelle-invitation",
+        storageBucket: "axelle-invitation.firebasestorage.app",
+        messagingSenderId: "598307044937",
+        appId: "1:598307044937:web:9ca20b4ace929e82fbc998",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      function formatTime(ts) {
+        if (!ts) return '';
+        const d = ts.toDate();
+        return d.toLocaleDateString('en-PH', { month: 'short', day: 'numeric' }) +
+          ' · ' + d.toLocaleTimeString('en-PH', { hour: '2-digit', minute: '2-digit' });
+      }
+
+      async function loadResponses() {
+        const list = document.getElementById('response-list');
+        try {
+          const snap = await getDocs(query(collection(db, 'rsvps'), orderBy('timestamp', 'desc')));
+          list.innerHTML = '';
+
+          if (snap.empty) {
+            list.innerHTML = '<div class="empty-state">No responses yet.</div>';
+            document.getElementById('count-yes').textContent = '0';
+            document.getElementById('count-no').textContent = '0';
+            document.getElementById('count-total').textContent = '0';
+            return;
+          }
+
+          let yes = 0, no = 0;
+          snap.forEach(doc => {
+            const d = doc.data();
+            if (d.response === 'yes') yes++; else no++;
+
+            const item = document.createElement('div');
+            item.className = 'response-item';
+            item.innerHTML = `
+              <span class="guest-name">${d.guestName}</span>
+              <div class="response-meta">
+                <span class="response-badge ${d.response === 'yes' ? 'badge-yes' : 'badge-no'}">
+                  ${d.response === 'yes' ? '✅ Attending' : "❌ Can't make it"}
+                </span>
+                <span class="response-time">${formatTime(d.timestamp)}</span>
+              </div>
+            `;
+            list.appendChild(item);
+          });
+
+          document.getElementById('count-yes').textContent = yes;
+          document.getElementById('count-no').textContent = no;
+          document.getElementById('count-total').textContent = yes + no;
+        } catch (err) {
+          list.innerHTML = '<div class="empty-state">Failed to load responses.</div>';
+          console.error(err);
+        }
+      }
+
+      loadResponses();
+    </script>
+  </body>
+</html>
