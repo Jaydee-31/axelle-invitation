@@ -13,18 +13,32 @@ modalOverlay.addEventListener('click', (e) => {
   if (e.target === modalOverlay) modalOverlay.classList.remove('open');
 });
 
-rsvpYes.addEventListener('click', () => {
-  modalOverlay.classList.remove('open');
-  document.getElementById('ty-text').textContent = 'Yay! See You There! 🥂';
-  document.getElementById('ty-sub').textContent = `I'm so happy you'll be there, ${guestName || "dear guest"}! I'll save a big hug just for you! 🌸`;
-  tyMsg.classList.add('show');
-  saveDeviceAction(guestName, 'yes').catch(console.error);
-});
+async function handleRsvp(response) {
+  const loader = document.getElementById('modal-loading');
+  rsvpYes.disabled = true;
+  rsvpNo.disabled = true;
+  loader.classList.add('active');
 
-rsvpNo.addEventListener('click', () => {
+  try {
+    await saveDeviceAction(guestName, response);
+  } catch (e) {
+    console.error(e);
+  }
+
+  loader.classList.remove('active');
+  rsvpYes.disabled = false;
+  rsvpNo.disabled = false;
   modalOverlay.classList.remove('open');
-  document.getElementById('ty-text').textContent = "I'll Miss You! 💕";
-  document.getElementById('ty-sub').textContent = `Thank you for letting me know, ${guestName || "dear guest"}. I'll be sending you lots of love! 🌸`;
+
+  if (response === 'yes') {
+    document.getElementById('ty-text').textContent = 'Yay! See You There! 🥂';
+    document.getElementById('ty-sub').textContent = `I'm so happy you'll be there, ${guestName || "dear guest"}! I'll save a big hug just for you! 🌸`;
+  } else {
+    document.getElementById('ty-text').textContent = "I'll Miss You! 💕";
+    document.getElementById('ty-sub').textContent = `Thank you for letting me know, ${guestName || "dear guest"}. I'll be sending you lots of love! 🌸`;
+  }
   tyMsg.classList.add('show');
-  saveDeviceAction(guestName, 'no').catch(console.error);
-});
+}
+
+rsvpYes.addEventListener('click', () => handleRsvp('yes'));
+rsvpNo.addEventListener('click', () => handleRsvp('no'));

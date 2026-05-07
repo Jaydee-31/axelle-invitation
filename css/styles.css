@@ -850,6 +850,26 @@ a.detail-card--link:focus-visible {
 .rsvp-btn:hover {
 	transform: translateY(-2px);
 }
+.rsvp-instruction {
+	font-family: "Quicksand", sans-serif;
+	font-size: 14px;
+	color: var(--text-mid);
+	text-align: center;
+	margin: 12px auto 0;
+	line-height: 1.6;
+	max-width: 260px;
+}
+.rsvp-arrow {
+	font-size: 28px;
+	color: var(--rose);
+	text-align: center;
+	margin-top: 6px;
+	animation: bounceArrow 1.2s ease-in-out infinite;
+}
+@keyframes bounceArrow {
+	0%, 100% { transform: translateY(0); opacity: 1; }
+	50% { transform: translateY(8px); opacity: 0.5; }
+}
 
 /* ═══════════════════════════════════════════
    NAV BUTTONS
@@ -1016,6 +1036,34 @@ a.detail-card--link:focus-visible {
 	color: var(--text-light);
 	line-height: 1;
 }
+.modal-loading {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(253, 246, 240, 0.88);
+	border-radius: inherit;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
+	backdrop-filter: blur(2px);
+}
+.modal-loading.active {
+	opacity: 1;
+	pointer-events: all;
+}
+.spinner {
+	width: 38px;
+	height: 38px;
+	border: 3px solid var(--blush);
+	border-top-color: var(--deep-rose);
+	border-radius: 50%;
+	animation: spin 0.75s linear infinite;
+}
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}
 
 /* ═══════════════════════════════════════════
    CORNER BOWS (decorative)
@@ -1106,18 +1154,29 @@ a.detail-card--link:focus-visible {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: rgba(255, 240, 245, 0.95);
+	background: rgba(90, 58, 71, 0.35);
+	backdrop-filter: blur(10px);
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 0.5s;
-	flex-direction: column;
-	gap: 12px;
-	padding: 40px 32px;
-	text-align: center;
+	transition: opacity 0.4s;
 }
 #ty-msg.show {
 	opacity: 1;
 	pointer-events: all;
+}
+.ty-card {
+	width: min(340px, 88vw);
+	padding: 40px 32px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	transform: scale(0.88) translateY(20px);
+	transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+#ty-msg.show .ty-card {
+	transform: scale(1) translateY(0);
 }
 .ty-emoji {
 	font-size: 48px;

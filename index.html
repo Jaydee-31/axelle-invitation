@@ -202,7 +202,8 @@
 						my dear <span id="godparent-label">Ninong &amp; Ninang</span>.<br />
 						Thank you for choosing to walk beside me in faith. 💕
 					</p>
-					<button class="rsvp-btn" id="rsvp-open-btn">💌 RSVP Now</button>
+					<p class="rsvp-instruction">Please click the RSVP button below to confirm your attendance.</p>
+					<div class="rsvp-arrow">&#8595;</div>
 				</div>
 			</div>
 			<!-- /stage -->
@@ -228,15 +229,20 @@
 					<button class="modal-yes" id="rsvp-yes">✨ Yes, I'll be there!</button>
 					<button class="modal-no" id="rsvp-no">Sorry, I can't make it</button>
 				</div>
+				<div class="modal-loading" id="modal-loading">
+					<div class="spinner"></div>
+				</div>
 			</div>
 		</div>
 
 		<!-- Thank-you message -->
 		<div id="ty-msg">
-			<div class="ty-emoji">🌸</div>
-			<div class="ty-text" id="ty-text">Thank You!</div>
-			<div class="ty-sub" id="ty-sub">We can't wait to see you there.</div>
-			<button class="ty-close" onclick="document.getElementById('ty-msg').classList.remove('show')">Close</button>
+			<div class="ty-card glass">
+				<div class="ty-emoji">🌸</div>
+				<div class="ty-text" id="ty-text">Thank You!</div>
+				<div class="ty-sub" id="ty-sub">We can't wait to see you there.</div>
+				<button class="ty-close" onclick="document.getElementById('ty-msg').classList.remove('show')">Close</button>
+			</div>
 		</div>
 
 		<script src="js/error-handler.js"></script>
