@@ -394,7 +394,7 @@ body {
 	font-family: "Great Vibes", cursive;
 	font-size: clamp(58px, 15vw, 76px);
 	color: var(--text-dark);
-	line-height: 1;
+	line-height: 1.4;
 	opacity: 0;
 	animation: fadeUp 1s 0.7s forwards;
 	background: linear-gradient(135deg, #c97b96, #e8a0b4, #c9a96e);
@@ -554,6 +554,7 @@ body {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
+	padding: 0.1em 0.1em 0.25em;
 }
 
 /* ═══════════════════════════════════════════
@@ -1169,33 +1170,38 @@ body {
    RSVP RESPONDENTS PANEL
 ═══════════════════════════════════════════ */
 #rsvp-list {
-  width: min(340px, 90vw);
-  max-height: 160px;
-  overflow-y: auto;
-  margin-top: 4px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 16px;
-  backdrop-filter: blur(8px);
+	width: min(340px, 90vw);
+	max-height: 160px;
+	overflow-y: auto;
+	margin-top: 4px;
+	padding: 10px 14px;
+	background: rgba(255, 255, 255, 0.6);
+	border-radius: 16px;
+	backdrop-filter: blur(8px);
 }
 .rsvp-list-title {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: var(--text-mid);
-  margin: 0 0 8px;
+	font-family: "Quicksand", sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	color: var(--text-mid);
+	margin: 0 0 8px;
 }
 .rsvp-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 13px;
-  color: var(--text-dark);
-  padding: 5px 0;
-  border-bottom: 1px solid rgba(201, 123, 150, 0.12);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: "Quicksand", sans-serif;
+	font-size: 13px;
+	color: var(--text-dark);
+	padding: 5px 0;
+	border-bottom: 1px solid rgba(201, 123, 150, 0.12);
 }
-.rsvp-item:last-child { border-bottom: none; }
-.rsvp-item-status { font-size: 12px; color: var(--text-mid); }
+.rsvp-item:last-child {
+	border-bottom: none;
+}
+.rsvp-item-status {
+	font-size: 12px;
+	color: var(--text-mid);
+}
