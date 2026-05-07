@@ -18,7 +18,7 @@ rsvpYes.addEventListener('click', () => {
   document.getElementById('ty-text').textContent = 'Yay! See You There! 🥂';
   document.getElementById('ty-sub').textContent = `I'm so happy you'll be there, ${guestName || "dear guest"}! I'll save a big hug just for you! 🌸`;
   tyMsg.classList.add('show');
-  saveRsvp(guestName, 'yes').catch(console.error);
+  saveDeviceAction(guestName, 'yes').catch(console.error);
 });
 
 rsvpNo.addEventListener('click', () => {
@@ -26,5 +26,5 @@ rsvpNo.addEventListener('click', () => {
   document.getElementById('ty-text').textContent = "I'll Miss You! 💕";
   document.getElementById('ty-sub').textContent = `Thank you for letting me know, ${guestName || "dear guest"}. I'll be sending you lots of love! 🌸`;
   tyMsg.classList.add('show');
-  saveRsvp(guestName, 'no').catch(console.error);
+  saveDeviceAction(guestName, 'no').catch(console.error);
 });
