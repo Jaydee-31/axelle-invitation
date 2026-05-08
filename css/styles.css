@@ -774,6 +774,37 @@ a.detail-card--link:focus-visible {
 .detail-icon {
 	font-size: 22px;
 }
+.cal-icon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border-radius: 8px;
+	border: 2px solid var(--rose);
+	overflow: hidden;
+	line-height: 1;
+	font-family: "Quicksand", sans-serif;
+	font-size: inherit;
+}
+.cal-month {
+	background: var(--rose);
+	color: #fff;
+	font-size: 7px;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	width: 100%;
+	text-align: center;
+	padding: 2px 0;
+	text-transform: uppercase;
+}
+.cal-day {
+	font-size: 12px;
+	font-weight: 700;
+	color: var(--rose);
+	padding: 1px 0;
+}
 .detail-label {
 	font-family: "Quicksand", sans-serif;
 	font-size: 10px;
@@ -864,8 +895,15 @@ a.detail-card--link:focus-visible {
 	animation: bounceArrow 1.2s ease-in-out infinite;
 }
 @keyframes bounceArrow {
-	0%, 100% { transform: translateY(0); opacity: 1; }
-	50% { transform: translateY(8px); opacity: 0.5; }
+	0%,
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(8px);
+		opacity: 0.5;
+	}
 }
 
 /* ═══════════════════════════════════════════
@@ -1059,7 +1097,9 @@ a.detail-card--link:focus-visible {
 	animation: spin 0.75s linear infinite;
 }
 @keyframes spin {
-	to { transform: rotate(360deg); }
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 /* ═══════════════════════════════════════════
