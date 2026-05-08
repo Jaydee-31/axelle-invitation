@@ -4,7 +4,7 @@ function animateLetter() {
 
 	const body = document.getElementById("letter-body");
 	body.innerHTML = "";
-	const words = letterMsg.split(" ");
+	const words = letterMsgShort.split(" ");
 	words.forEach((w, i) => {
 		const span = document.createElement("span");
 		span.className = "word";

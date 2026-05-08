@@ -706,11 +706,8 @@ body {
 	width: 100%;
 	aspect-ratio: 1;
 	border-radius: 4px;
-	background: linear-gradient(135deg, #fce8ef, #fde8f5, #f8e8d5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 36px;
+	display: block;
+	object-fit: cover;
 	overflow: hidden;
 }
 .pol-label {
