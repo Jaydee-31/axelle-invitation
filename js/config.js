@@ -7,7 +7,7 @@ if (!guestName || !guestName.trim()) {
 }
 
 const _nameLower = guestName ? guestName.toLowerCase() : "";
-const godparentRole = _nameLower.includes("ninong") ? "Ninong" : _nameLower.includes("ninang") ? "Ninang" : null;
+const godparentRole = (_nameLower.includes("ninong") || _nameLower.includes("tito")) ? "Ninong" : (_nameLower.includes("ninang") || _nameLower.includes("tita")) ? "Ninang" : null;
 const SCENE_DURATION = 7000;
 const LETTER_SCENE_DURATION = 20000;
 
